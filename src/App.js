@@ -1,3 +1,4 @@
+/* eslint-disable no-sequences */
 import React, { useState } from "react";
 import { CSVReader } from "react-papaparse";
 import "./App.css";
@@ -5,7 +6,6 @@ import { ExportYdk } from "./components/ExportYdk/ExportYdk";
 
 function App() {
   const [cards, setCards] = useState();
-  const [error, setError] = useState();
 
   const handleOnDrop = async (data) => {
     setCards(null);
@@ -17,8 +17,6 @@ function App() {
     console.log(joinedCards);
     if (maxDupeCards.length > 1) {
       setCards(joinedCards);
-    } else {
-      setError("Invalid CSV");
     }
   };
 
